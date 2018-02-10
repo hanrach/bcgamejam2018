@@ -7,10 +7,13 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.graphics.Color;
+import android.content.Intent;
 
 public class mathquiz extends AppCompatActivity {
 
     private int mathquestionlevel = 1;
+    private int score = 0;
+    private int attempts = 0;
     private int answer;
     private int response1;
     private int response2;
@@ -33,6 +36,8 @@ public class mathquiz extends AppCompatActivity {
         int correctResponse = rand.nextInt(5) + 1;
         switch (this.mathquestionlevel){
             case 1 :
+                //Note! It's possible for the answer to appear twice through randomness
+                //Either answer will be evaluated as correct
                 int first = rand.nextInt(11) + 1;
                 int second = rand.nextInt(11) + 1;
                 this.response1 = rand.nextInt(143) + 1;
@@ -59,6 +64,7 @@ public class mathquiz extends AppCompatActivity {
                 mathQuestion = Integer.toString(first) + " x " + Integer.toString(second) + " = ?";
                 return mathQuestion;
             case 2 :
+
                 return mathQuestion;
             case 3 :
                 return mathQuestion;
@@ -70,24 +76,32 @@ public class mathquiz extends AppCompatActivity {
     }
 
     public void chooseAnswer(View v){
+        this.attempts++;
         TextView mathQuestionTextView = findViewById(R.id.mathquestion);
+        TextView confirmationTextView = findViewById(R.id.confirmation);
         Button b = (Button)v;
         int response = Integer.parseInt(b.getText().toString());
         if (response == answer){
-            mathQuestionTextView.setText("You are correct!");
-            mathQuestionTextView.setTextColor(Color.GREEN);
+            confirmationTextView.setText("You are correct!");
+            confirmationTextView.setTextColor(Color.GREEN);
+            this.score++;
+            TextView scoreView = findViewById(R.id.scorecounter);
+            scoreView.setText("Score: " + Integer.toString(this.score));
         }else{
-            mathQuestionTextView.setText("You are incorrect!");
-            mathQuestionTextView.setTextColor(Color.RED);
+            confirmationTextView.setText("You are incorrect!");
+            confirmationTextView.setTextColor(Color.RED);
+        }
+
+        if (this.attempts > 5){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }else{
+            mathQuestionTextView.setText(generateMathQuestion());
+            generateResponses();
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mathquiz);
-        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
-        mathQuestionTextView.setText(generateMathQuestion());
+    public void generateResponses(){
         Button button1 = findViewById(R.id.mathresponse1);
         button1.setText(Integer.toString(this.response1));
         Button button2 = findViewById(R.id.mathresponse2);
@@ -100,5 +114,14 @@ public class mathquiz extends AppCompatActivity {
         button5.setText(Integer.toString(this.response5));
         Button button6 = findViewById(R.id.mathresponse6);
         button6.setText(Integer.toString(this.response6));
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mathquiz);
+        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
+        mathQuestionTextView.setText(generateMathQuestion());
+        generateResponses();
     }
 }
