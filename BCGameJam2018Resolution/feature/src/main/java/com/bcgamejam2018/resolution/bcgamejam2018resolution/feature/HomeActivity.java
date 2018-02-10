@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
     public void healthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
         startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }
