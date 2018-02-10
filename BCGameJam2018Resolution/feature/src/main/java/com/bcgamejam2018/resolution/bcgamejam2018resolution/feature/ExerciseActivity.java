@@ -13,26 +13,26 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 import android.view.View;
+import android.view.View.OnClickListener;
+
 public class ExerciseActivity extends AppCompatActivity implements SensorEventListener {
 
     SensorManager sensorManager;
     TextView stepstext;
     TextView goalstepstext;
-    int goalsteps = MainActivity.level + 9;
+    int goalsteps = 50*HomeActivity.level ;
     float steps = 0;
     TextView level;
     boolean activityRunning = false;
-    Button home;
+    ImageButton homeButton;
 //    Button pause;
     //  need to get level from the main,
     //
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,18 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
         goalstepstext = (TextView) findViewById(R.id.goalstepstext);
         level = (TextView) findViewById(R.id.level);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        goalstepstext.setText(String.valueOf(goalsteps)+"steps");
+        goalstepstext.setText(String.valueOf(goalsteps));
+
+
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                steps = 0;
+                activityRunning = false;
+                finish();
+            }
+        });
     }
 
     @Override
@@ -66,9 +77,18 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+        steps = sensorEvent.values[0];
         if (activityRunning) {
-            steps = sensorEvent.values[0];
             stepstext.setText(String.valueOf(sensorEvent.values[0]));
+
+            if (steps == goalsteps) {
+                Toast.makeText(this, "Goal accomplished!", Toast.LENGTH_SHORT).show();
+                steps = 0;
+                activityRunning = false;
+                Intent returnIntent = new Intent();
+                setResult(RESULT_CANCELED, returnIntent);
+                finish();
+            }
         }
     }
 
@@ -77,19 +97,4 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
 
     }
 
-
-    public void endGame(SensorEvent sensorEvent) {
-        // if steps == goal step, display "Congratulations!" and add go back to home button
-        float stepsnum = sensorEvent.values[0];
-        if (stepsnum == goalsteps) {
-            Toast.makeText(this, "Goal accomplished!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    ///// all minigames should call this function upon finish //////
-    public void finish(View view){
-        Intent returnIntent = new Intent();
-        setResult(RESULT_CANCELED, returnIntent);
-        finish();
-    }
 }

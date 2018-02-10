@@ -10,15 +10,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int level = 1;
+
+    ImageButton gameStartButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ImageButton startImageBtn = findViewById(R.id.gameStartButton);
-
-        startImageBtn.setOnClickListener(new ImageButton.OnClickListener(){
+        gameStartButton = findViewById(R.id.gameStartButton);
+        gameStartButton.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
 //                Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",

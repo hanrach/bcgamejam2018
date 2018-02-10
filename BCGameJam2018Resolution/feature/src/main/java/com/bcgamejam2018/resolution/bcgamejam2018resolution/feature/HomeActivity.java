@@ -24,6 +24,12 @@ public class HomeActivity extends AppCompatActivity {
     int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
 
+    public static int level =1;
+    public static int healthPoints=0;
+    public static int intellectPoints=0;
+    public static int moneyPoints =0;
+    public static int relPoints =0;
+
     public void updateMonth(){
         if (month == 0) {
             ending();
