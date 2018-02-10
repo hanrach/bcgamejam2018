@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:baselineAligned="true"
-        android:text="Today I want to take..."
+        android:text="Goal steps for today:"
         android:textSize="30sp" />
 
     <TextView
@@ -28,12 +28,12 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/step_info"
         android:layout_width="324dp"
         android:layout_height="59dp"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/goalstepstext"
-        android:layout_marginTop="80dp"
+        android:layout_alignBottom="@+id/stepstext"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="18dp"
         android:baselineAligned="true"
         android:text="Steps Taken:"
         android:textSize="50sp" />
@@ -42,19 +42,30 @@
         android:id="@+id/stepstext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/step_info"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
+        android:layout_above="@+id/level"
+        android:layout_alignEnd="@+id/goalstepstext"
+        android:layout_marginBottom="111dp"
         android:text="0"
         android:textSize="50sp" />
 
     <TextView
-        android:id="@+id/level"
-        android:layout_width="75dp"
-        android:layout_height="78dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/stepstext"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginEnd="14dp"
+        android:text="Level"
+        android:textSize="30sp"
+        android:id="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/textView4"
         android:text="1"
         android:textSize="30sp" />
 
