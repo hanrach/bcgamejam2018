@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.view.View;
 import android.graphics.Color;
 import android.content.Intent;
+import android.os.CountDownTimer;
 
 public class mathquiz extends AppCompatActivity {
 
@@ -37,7 +38,7 @@ public class mathquiz extends AppCompatActivity {
         switch (this.mathquestionlevel){
             case 1 :
                 //Note! It's possible for the answer to appear twice through randomness
-                //Either answer will be evaluated as correct
+                //Either selection will be evaluated as correct
                 int first = rand.nextInt(11) + 1;
                 int second = rand.nextInt(11) + 1;
                 this.response1 = rand.nextInt(143) + 1;
@@ -64,7 +65,6 @@ public class mathquiz extends AppCompatActivity {
                 mathQuestion = Integer.toString(first) + " x " + Integer.toString(second) + " = ?";
                 return mathQuestion;
             case 2 :
-
                 return mathQuestion;
             case 3 :
                 return mathQuestion;
@@ -93,7 +93,7 @@ public class mathquiz extends AppCompatActivity {
         }
 
         if (this.attempts > 5){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(intent);
         }else{
             mathQuestionTextView.setText(generateMathQuestion());
