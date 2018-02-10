@@ -7,26 +7,44 @@
   },
   "relationship": {
     "discovery": {
-      "quizzes": [{"information": "Which season do you have best chance of getting a relationship",
+      "quizzes": [{"information": "Which season do you have best chance of getting a relationship?",
         "options": ["Spring", "Summer", "Autumn", "Winter"],
         "correctIndex": 3},
         {"information": "What is the most common height difference between couples? (Male Height - Female Height)",
           "options": ["0cm to 5cm", "5cm to 10cm", "10cm to 15cm", "15cm to 20cm"],
           "correctIndex": 2},
-        {"information": "Question 3",
-          "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
-          "correctIndex": 3},
-        {"information": "Question 4",
-          "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
-          "correctIndex": 0}]
+        {"information": "On average, at which period of life does people feel most lonely?",
+          "options": ["teen(10-19)", "twenties(20-29)", "thirties(30-39)", "forties(40-49)"],
+          "correctIndex": 2},
+        {"information": "How many times does a couple lie to each other on average in a week?",
+          "options": ["7 times", "5 times", "3 times", "1 times"],
+          "correctIndex": 1}]
     },"romance": {
-      "quizzes": [{"information": "Question 2",
-        "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
-        "correctIndex": 2}]
+      "quizzes": [{"information": "How many hours of kissing does average couple spend in their lifetime?",
+        "options": ["111 hours", "224 hours", "336 hours", "448 hours"],
+        "correctIndex": 2},
+        {"information": "How long does the 'in love' phase or the 'honeymoon phase' usually last?",
+          "options": ["1 week", "1 month", "6 months", "1 year"],
+          "correctIndex": 3},
+        {"information": "How many dates does an average person go out before they marry?",
+          "options": ["at least 50 dates", "at least 100 dates", "at least 200 dates", "at least 250 dates"],
+          "correctIndex": 1},
+        {"information": "Where is the most common first date spot?",
+          "options": ["Cafe (e.g. Starbucks)", "Movie Theatre", "Walk at a park", "Dinner at Restaurants"],
+          "correctIndex": 0}]
     },"breakup": {
-      "quizzes": [{"information": "Question 3",
-        "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
-        "correctIndex": 2}]
+      "quizzes": [{"information": "During which season does break-ups between couples occur the most?",
+        "options": ["Spring", "Summer", "Autumn", "Winter"],
+        "correctIndex": 0},
+        {"information": "What is the biggest cause of divorce?",
+          "options": ["lack of income", "lack of intercourse", "unfaithfulness", "child-upbringing"],
+          "correctIndex": 2},
+        {"information": "What is the average time before a long distance relationship breaks down?",
+          "options": ["3 months", "4.5 months", "6 months", "1 year"],
+          "correctIndex": 2},
+        {"information": "What percentage of breakup couples get back together?",
+          "options": ["35%", "50%", "65%", "80%"],
+          "correctIndex": 1}]
     }
   },
   "health": {
