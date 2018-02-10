@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     int intelligence = 5;
     int wealth = 5;
     int relationship= 5;
-    int health = 5;
+    public static int health = 5;
     ImageView i;
     ImageView w;
     ImageView r;
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     public void setIntStat(int i){
         intelligence += i;
     }
-    public void setHealthStat(int i){
+    public static void setHealthStat(int i){
         health += i;
     }
     public void setRelStat(int i){
