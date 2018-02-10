@@ -1,5 +1,6 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",
                         Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+//                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
             }
         });
     }
