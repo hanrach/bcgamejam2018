@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",
 //                        Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Intro.class);
 //                intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
