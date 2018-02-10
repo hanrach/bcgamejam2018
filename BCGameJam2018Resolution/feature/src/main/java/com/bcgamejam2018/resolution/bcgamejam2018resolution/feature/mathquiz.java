@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.Random;
 import android.widget.TextView;
+import android.widget.Button;
+import android.view.View;
+import android.graphics.Color;
 
 public class mathquiz extends AppCompatActivity {
 
@@ -27,7 +30,7 @@ public class mathquiz extends AppCompatActivity {
     public String generateMathQuestion(){
         String mathQuestion = "Something went wrong...";
         Random rand = new Random();
-        int randomResponse = rand.nextInt(5) + 1;
+        int correctResponse = rand.nextInt(5) + 1;
         switch (this.mathquestionlevel){
             case 1 :
                 int first = rand.nextInt(11) + 1;
@@ -39,7 +42,7 @@ public class mathquiz extends AppCompatActivity {
                 this.response5 = rand.nextInt(143) + 1;
                 this.response6 = rand.nextInt(143) + 1;
                 answer = first * second;
-                switch (randomResponse){
+                switch (correctResponse){
                     case 1 : this.response1 = answer;
                         break;
                     case 2 : this.response2 = answer;
@@ -66,12 +69,36 @@ public class mathquiz extends AppCompatActivity {
         }
     }
 
+    public void chooseAnswer(View v){
+        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
+        Button b = (Button)v;
+        int response = Integer.parseInt(b.getText().toString());
+        if (response == answer){
+            mathQuestionTextView.setText("You are correct!");
+            mathQuestionTextView.setTextColor(Color.GREEN);
+        }else{
+            mathQuestionTextView.setText("You are incorrect!");
+            mathQuestionTextView.setTextColor(Color.RED);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mathquiz);
-        TextView mathQuestionTextView;
-        mathQuestionTextView  = (TextView)findViewById(R.id.mathquestion);
+        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
         mathQuestionTextView.setText(generateMathQuestion());
+        Button button1 = findViewById(R.id.mathresponse1);
+        button1.setText(Integer.toString(this.response1));
+        Button button2 = findViewById(R.id.mathresponse2);
+        button2.setText(Integer.toString(this.response2));
+        Button button3 = findViewById(R.id.mathresponse3);
+        button3.setText(Integer.toString(this.response3));
+        Button button4 = findViewById(R.id.mathresponse4);
+        button4.setText(Integer.toString(this.response4));
+        Button button5 = findViewById(R.id.mathresponse5);
+        button5.setText(Integer.toString(this.response5));
+        Button button6 = findViewById(R.id.mathresponse6);
+        button6.setText(Integer.toString(this.response6));
     }
 }
