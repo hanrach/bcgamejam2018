@@ -1,11 +1,13 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,28 @@ public class HomeActivity extends AppCompatActivity {
     TextView calendar;
     int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
+    // STATS
+    int intelligence = 5;
+    int wealth = 5;
+    int relationship= 5;
+    int health = 5;
+    ImageView i;
+    ImageView w;
+    ImageView r;
+    ImageView h;
+
+    public void setIntStat(int i){
+        intelligence += i;
+    }
+    public void setHealthStat(int i){
+        health += i;
+    }
+    public void setRelStat(int i){
+        relationship += i;
+    }
+    public void setWealthStat(int i){
+        wealth += i;
+    }
 
     public void updateMonth(){
         if (month == 0) {
@@ -32,6 +56,11 @@ public class HomeActivity extends AppCompatActivity {
         monthsLeft.setText("There's "+ month+" months left!!");
         int i = (month*(-1))+12;
         calendar.setText(monthList.get(i));
+
+        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
+        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
+        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
+        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
     }
 
     /////////////EDIT ENDING!!!!////////
@@ -94,5 +123,9 @@ public class HomeActivity extends AppCompatActivity {
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
+        i = findViewById(R.id.intelStat);
+        w = findViewById(R.id.wealthStat);
+        r = findViewById(R.id.relStat);
+        h = findViewById(R.id.healthStat);
     }
 }

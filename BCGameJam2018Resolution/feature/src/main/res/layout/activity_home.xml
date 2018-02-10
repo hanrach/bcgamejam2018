@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.bcgamejam2018.resolution.bcgamejam2018resolution.feature.HomeActivity">
+
     <ImageView
         android:id="@+id/background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/background"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/sentence"
@@ -66,7 +69,7 @@
     <ImageView
         android:id="@+id/stats"
         android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_height="149dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -76,6 +79,126 @@
         app:layout_constraintStart_toEndOf="@+id/character"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stats" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/stats"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintLeft_toLeftOf="@+id/stats"
+        app:layout_constraintRight_toRightOf="@+id/stats"
+        app:layout_constraintTop_toTopOf="@+id/stats"
+        app:layout_constraintVertical_bias="0.494">
+
+        <ImageView
+            android:id="@+id/intelStat2"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:translationX="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:srcCompat="@android:color/holo_red_light"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <ImageView
+            android:id="@+id/2"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/relStat"
+            app:srcCompat="@android:color/holo_red_light" />
+
+        <ImageView
+            android:id="@+id/3"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/intelStat"
+            app:srcCompat="@android:color/holo_red_light" />
+
+        <ImageView
+            android:id="@+id/4"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/wealthStat"
+            app:srcCompat="@android:color/holo_red_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/stats"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintLeft_toLeftOf="@+id/stats"
+        app:layout_constraintRight_toRightOf="@+id/stats"
+        app:layout_constraintTop_toTopOf="@+id/stats"
+        app:layout_constraintVertical_bias="0.494">
+
+        <ImageView
+            android:id="@+id/intelStat"
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:translationX="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:srcCompat="@android:color/holo_green_dark"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <ImageView
+            android:id="@+id/healthStat"
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/relStat"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/wealthStat"
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/intelStat"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/relStat"
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/stickynote"
+            app:layout_constraintStart_toStartOf="@+id/stats"
+            app:layout_constraintTop_toBottomOf="@+id/wealthStat"
+            app:srcCompat="@android:color/holo_green_dark" />
+    </LinearLayout>
 
     <GridLayout
         android:id="@+id/gridLayout"
