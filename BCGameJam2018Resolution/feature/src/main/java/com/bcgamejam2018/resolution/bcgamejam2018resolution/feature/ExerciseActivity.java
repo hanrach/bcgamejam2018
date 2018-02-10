@@ -82,9 +82,14 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
             stepstext.setText(String.valueOf(sensorEvent.values[0]));
 
             if (steps == goalsteps) {
+                HomeActivity.healthPoints = HomeActivity.healthPoints + 1;
+                if ((steps % 300) == 0 && steps > 1) {
+                    HomeActivity.level = HomeActivity.level +1;
+                }
                 Toast.makeText(this, "Goal accomplished!", Toast.LENGTH_SHORT).show();
                 steps = 0;
                 activityRunning = false;
+                // HomeActivity.gethealthPoints.()
                 Intent returnIntent = new Intent();
                 setResult(RESULT_CANCELED, returnIntent);
                 finish();

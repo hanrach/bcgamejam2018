@@ -30,6 +30,13 @@ public class HomeActivity extends AppCompatActivity {
     public static int moneyPoints =0;
     public static int relPoints =0;
 
+    public int gethealthPoints() {
+        return healthPoints;
+    }
+    public void sethealthPoints(int healthp) {
+        this.healthPoints = healthp;
+    }
+
     public void updateMonth(){
         if (month == 0) {
             ending();
