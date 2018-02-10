@@ -42,6 +42,8 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
         level = (TextView) findViewById(R.id.level);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         goalstepstext.setText(String.valueOf(goalsteps)+"steps");
+        //test
+        HomeActivity.setHealthStat(50);
     }
 
     @Override

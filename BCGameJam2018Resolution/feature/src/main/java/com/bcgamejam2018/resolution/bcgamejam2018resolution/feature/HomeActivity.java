@@ -2,6 +2,7 @@ package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,25 +27,25 @@ public class HomeActivity extends AppCompatActivity {
     int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
     // STATS
-    int intelligence = 5;
-    int wealth = 5;
-    int relationship= 5;
-    int health = 5;
+    static int intelligence = 5;
+    static int wealth = 5;
+    static int relationship= 5;
+    static int health = 5;
     ImageView i;
     ImageView w;
     ImageView r;
     ImageView h;
 
-    public void setIntStat(int i){
+    static void setIntStat(int i){
         intelligence += i;
     }
-    public void setHealthStat(int i){
+    static void setHealthStat(int i){
         health += i;
     }
-    public void setRelStat(int i){
+    static void setRelStat(int i){
         relationship += i;
     }
-    public void setWealthStat(int i){
+    static void setWealthStat(int i){
         wealth += i;
     }
 
@@ -57,6 +58,26 @@ public class HomeActivity extends AppCompatActivity {
         int i = (month*(-1))+12;
         calendar.setText(monthList.get(i));
 
+        android.view.ViewGroup.LayoutParams layoutParams = h.getLayoutParams();
+        layoutParams.width = health;
+        layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
+        h.setLayoutParams(layoutParams);
+
+        layoutParams = r.getLayoutParams();
+        layoutParams.width = relationship;
+        layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
+        r.setLayoutParams(layoutParams);
+
+        layoutParams = w.getLayoutParams();
+        layoutParams.width = wealth;
+        layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
+        w.setLayoutParams(layoutParams);
+
+        layoutParams = this.i.getLayoutParams();
+        layoutParams.width = intelligence;
+        layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
+        this.i.setLayoutParams(layoutParams);
+//<<<<<<< HEAD
 //        w.setMaxWidth(wealth);
 //        this.i.setMaxWidth(intelligence);
 //        r.setMaxWidth(relationship);
@@ -65,6 +86,12 @@ public class HomeActivity extends AppCompatActivity {
 //        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
 //        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
 //        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
+//=======
+//        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
+//        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
+//        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
+//        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
+//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 
     /////////////EDIT ENDING!!!!////////
@@ -127,10 +154,17 @@ public class HomeActivity extends AppCompatActivity {
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
+//<<<<<<< HEAD
 //        View temp = findViewById(R.id.lin);
-//        i = temp.findViewById(R.id.intelStat);
-//        w = temp.findViewById(R.id.wealthStat);
-//        r = temp.findViewById(R.id.relStat);
-//        h = temp.findViewById(R.id.healthStat);
+        i = findViewById(R.id.intelStat2);
+        w = findViewById(R.id.wealthStat2);
+        r = findViewById(R.id.relStat2);
+        h = findViewById(R.id.healthStat2);
+//=======
+//        i = findViewById(R.id.intelStat);
+//        w = findViewById(R.id.wealthStat);
+//        r = findViewById(R.id.relStat);
+//        h = findViewById(R.id.healthStat);
+//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 }
