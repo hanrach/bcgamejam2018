@@ -3,10 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BCGameJam2018Resolution.iml" filepath="$PROJECT_DIR$/BCGameJam2018Resolution.iml" />
+      <module fileurl="file://C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\BCGameJam2018Resolution.iml" filepath="C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\BCGameJam2018Resolution.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\app\app.iml" filepath="C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\base\base.iml" filepath="C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\base\base.iml" />
       <module fileurl="file://$PROJECT_DIR$/feature/feature.iml" filepath="$PROJECT_DIR$/feature/feature.iml" />
+      <module fileurl="file://C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\feature\feature.iml" filepath="C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\feature\feature.iml" />
       <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
+      <module fileurl="file://C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\instantapp\instantapp.iml" filepath="C:\Users\Grae\Documents\bcgamejam2018\BCGameJam2018Resolution\instantapp\instantapp.iml" />
     </modules>
   </component>
 </project>
