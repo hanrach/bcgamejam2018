@@ -16,6 +16,8 @@ public class mathquiz extends AppCompatActivity {
     private int score = 0;
     private int attempts = 0;
     private int answer;
+    private CountDownTimer timer;
+    private int timeLeft;
     private int response1;
     private int response2;
     private int response3;
@@ -84,7 +86,7 @@ public class mathquiz extends AppCompatActivity {
         if (response == answer){
             confirmationTextView.setText("You are correct!");
             confirmationTextView.setTextColor(Color.GREEN);
-            this.score++;
+            this.score = this.score = this.score + timeLeft;
             TextView scoreView = findViewById(R.id.scorecounter);
             scoreView.setText("Score: " + Integer.toString(this.score));
         }else{
@@ -98,6 +100,24 @@ public class mathquiz extends AppCompatActivity {
         }else{
             mathQuestionTextView.setText(generateMathQuestion());
             generateResponses();
+            this.timer = startTimer(this.timer);
+        }
+    }
+
+    public void noAnswer(){
+        this.attempts++;
+        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
+        TextView confirmationTextView = findViewById(R.id.confirmation);
+        confirmationTextView.setText("You ran out of time!");
+        confirmationTextView.setTextColor(Color.RED);
+        if (this.attempts > 5){
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+        }else{
+            mathQuestionTextView.setText(generateMathQuestion());
+            generateResponses();
+
+            this.timer = startTimer(this.timer);
         }
     }
 
@@ -116,6 +136,28 @@ public class mathquiz extends AppCompatActivity {
         button6.setText(Integer.toString(this.response6));
     }
 
+    public CountDownTimer startTimer(CountDownTimer timer){
+        if(timer == null){
+            timer = new CountDownTimer(10000, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    TextView timerTextView = findViewById(R.id.timer);
+                    timerTextView.setText("Seconds remaining: " + millisUntilFinished / 1000);
+                    timeLeft = (int) millisUntilFinished / 1000;
+                }
+
+                public void onFinish() {
+                    noAnswer();
+                }
+            }.start();
+        }
+        else{
+            timer.cancel(); // cancel
+            timer.start();  // then restart
+        }
+
+        return timer;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,5 +165,6 @@ public class mathquiz extends AppCompatActivity {
         TextView mathQuestionTextView = findViewById(R.id.mathquestion);
         mathQuestionTextView.setText(generateMathQuestion());
         generateResponses();
+        this.timer = startTimer(this.timer);
     }
 }
