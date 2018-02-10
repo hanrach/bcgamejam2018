@@ -1,0 +1,35 @@
+{
+  "intelligence": {
+
+  },
+  "wealth": {
+
+  },
+  "relationship": {
+    "discovery": {
+      "quizzes": [{"information": "Which season do you have best chance of getting a relationship",
+        "options": ["Spring", "Summer", "Autumn", "Winter"],
+        "correctIndex": 3},
+        {"information": "What is the most common height difference between couples? (Male Height - Female Height)",
+          "options": ["0cm to 5cm", "5cm to 10cm", "10cm to 15cm", "15cm to 20cm"],
+          "correctIndex": 2},
+        {"information": "Question 3",
+          "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
+          "correctIndex": 3},
+        {"information": "Question 4",
+          "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
+          "correctIndex": 0}]
+    },"romance": {
+      "quizzes": [{"information": "Question 2",
+        "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
+        "correctIndex": 2}]
+    },"breakup": {
+      "quizzes": [{"information": "Question 3",
+        "options": ["Choice1", "Choice2", "Choice3", "Choice4"],
+        "correctIndex": 2}]
+    }
+  },
+  "health": {
+
+  }
+}

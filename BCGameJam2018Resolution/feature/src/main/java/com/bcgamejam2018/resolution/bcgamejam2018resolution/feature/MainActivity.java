@@ -20,10 +20,9 @@ public class MainActivity extends AppCompatActivity {
         startImageBtn.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",
-                        Toast.LENGTH_LONG).show();
+                Util.showToast(getApplicationContext(), "Game Start Button Pressed!");
 
-                Intent intent = new Intent(getApplicationContext(), mathquiz.class);
+                Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
 //                intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
