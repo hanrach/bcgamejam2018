@@ -10,21 +10,33 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="Math Quiz"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/mathquestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/mathquestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="217dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="Question"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="75dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 </android.support.constraint.ConstraintLayout>
