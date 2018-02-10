@@ -5,7 +5,6 @@
     <application>
         <activity
             android:name=".MainActivity"
-            android:icon="@drawable/logo"
             android:screenOrientation="landscape">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -24,8 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"
-            android:screenOrientation="landscape">
+        <activity android:name=".HomeActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -38,8 +36,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity"
-            android:screenOrientation="landscape">
+        <activity android:name=".TestActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -52,8 +49,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".Intro"
-            android:screenOrientation="landscape">
+        <activity android:name=".Intro">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -66,8 +62,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExerciseActivity"
-            android:screenOrientation="landscape">
+        <activity android:name=".ExerciseActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
