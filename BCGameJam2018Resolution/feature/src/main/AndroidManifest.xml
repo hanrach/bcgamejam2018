@@ -5,7 +5,6 @@
     <application>
         <activity
             android:name=".MainActivity"
-            android:icon="@drawable/logo"
             android:screenOrientation="landscape">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />

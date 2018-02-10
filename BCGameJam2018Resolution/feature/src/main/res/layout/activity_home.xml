@@ -104,7 +104,7 @@
             tools:layout_editor_absoluteY="63dp" />
 
         <ImageView
-            android:id="@+id/2"
+            android:id="@+id/abc"
             android:layout_width="100dp"
             android:layout_height="10dp"
             android:layout_marginEnd="8dp"
@@ -116,7 +116,7 @@
             app:srcCompat="@android:color/holo_red_light" />
 
         <ImageView
-            android:id="@+id/3"
+            android:id="@+id/abcd"
             android:layout_width="100dp"
             android:layout_height="10dp"
             android:layout_marginEnd="8dp"
@@ -128,7 +128,7 @@
             app:srcCompat="@android:color/holo_red_light" />
 
         <ImageView
-            android:id="@+id/4"
+            android:id="@+id/abcde"
             android:layout_width="100dp"
             android:layout_height="10dp"
             android:layout_marginEnd="8dp"
