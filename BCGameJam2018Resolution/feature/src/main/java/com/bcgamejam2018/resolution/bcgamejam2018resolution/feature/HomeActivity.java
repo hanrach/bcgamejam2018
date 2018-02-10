@@ -59,22 +59,22 @@ public class HomeActivity extends AppCompatActivity {
         calendar.setText(monthList.get(i));
 
         android.view.ViewGroup.LayoutParams layoutParams = h.getLayoutParams();
-        layoutParams.width = health;
+        layoutParams.width = (int) (health * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         h.setLayoutParams(layoutParams);
 
         layoutParams = r.getLayoutParams();
-        layoutParams.width = relationship;
+        layoutParams.width = (int) (relationship * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         r.setLayoutParams(layoutParams);
 
         layoutParams = w.getLayoutParams();
-        layoutParams.width = wealth;
+        layoutParams.width = (int) (wealth * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         w.setLayoutParams(layoutParams);
 
         layoutParams = this.i.getLayoutParams();
-        layoutParams.width = intelligence;
+        layoutParams.width = (int) (intelligence * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         this.i.setLayoutParams(layoutParams);
 //<<<<<<< HEAD
