@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         startImageBtn.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "Game Start Button Pressed!",
+//                        Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 //                intent.putExtra(EXTRA_MESSAGE, message);

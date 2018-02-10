@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton healthButton;
     ImageButton relButton;
     TextView calendar;
-    int month = 2;
+    int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
 
     public void updateMonth(){
