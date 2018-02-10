@@ -10,14 +10,13 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginStart="396dp"
-        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Math Quiz"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintBottom_toTopOf="@+id/mathquestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,16 +26,100 @@
         android:id="@+id/mathquestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="217dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginStart="396dp"
-        android:layout_marginTop="40dp"
+        android:layout_above="@+id/mathresponse3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="188dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Question"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mathresponse1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mathresponse2"
+        android:layout_alignBottom="@+id/mathresponse2"
+        android:layout_marginBottom="30dp"
+        android:layout_toStartOf="@+id/mathresponse2"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintBottom_toTopOf="@+id/mathresponse4"
+        app:layout_constraintStart_toStartOf="@+id/mathresponse4" />
+
+    <Button
+        android:id="@+id/mathresponse2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mathresponse3"
+        android:layout_alignBottom="@+id/mathresponse3"
+        android:layout_alignStart="@+id/mathresponse5"
+        android:layout_marginTop="21dp"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintEnd_toStartOf="@+id/mathresponse3"
+        app:layout_constraintStart_toEndOf="@+id/mathresponse1"
+        app:layout_constraintTop_toBottomOf="@+id/mathquestion" />
+
+    <Button
+        android:id="@+id/mathresponse3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="28dp"
+        android:layout_toEndOf="@+id/mathresponse5"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintBottom_toTopOf="@+id/mathresponse6"
+        app:layout_constraintStart_toStartOf="@+id/mathresponse6" />
+
+    <Button
+        android:id="@+id/mathresponse4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mathresponse5"
+        android:layout_alignBottom="@+id/mathresponse5"
+        android:layout_alignStart="@+id/mathresponse1"
+        android:layout_marginBottom="40dp"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mathresponse5"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mathresponse5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mathresponse6"
+        android:layout_alignBottom="@+id/mathresponse6"
+        android:layout_centerHorizontal="true"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintBottom_toBottomOf="@+id/mathresponse4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toTopOf="@+id/mathresponse4" />
+
+    <Button
+        android:id="@+id/mathresponse6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/mathresponse3"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="8dp"
+        android:text="Button"
+        android:onClick="chooseAnswer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintStart_toEndOf="@+id/mathresponse5" />
+
 </android.support.constraint.ConstraintLayout>
