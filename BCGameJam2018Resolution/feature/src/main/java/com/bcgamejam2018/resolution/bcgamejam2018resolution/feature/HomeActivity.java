@@ -102,9 +102,13 @@ public class HomeActivity extends AppCompatActivity {
 
     /////////////EDIT ENDING!!!!////////
     public void ending(){
-        Toast.makeText(getApplicationContext(), "Game OVer",
+        Toast.makeText(getApplicationContext(), "Game Over",
                 Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getApplicationContext(), EndingActivity.class);
+        intent.putExtra("intelligence", intelligence);
+        intent.putExtra("wealth", wealth);
+        intent.putExtra("relationship", relationship);
+        intent.putExtra("health", health);
         startActivityForResult(intent, 100);
     }
 
