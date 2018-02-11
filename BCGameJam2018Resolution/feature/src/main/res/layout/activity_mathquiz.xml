@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.bcgamejam2018.resolution.bcgamejam2018resolution.feature.mathquiz">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:alpha="0.4"
+        app:srcCompat="@drawable/math"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -19,8 +29,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintBottom_toTopOf="@+id/mathquestion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/mathquestion"
@@ -29,6 +41,7 @@
         android:layout_above="@+id/mathresponse3"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="188dp"
+        android:autoSizeMinTextSize="70dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
@@ -128,8 +141,11 @@
         android:layout_height="28dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
+        android:alpha="1"
         android:gravity="center"
         android:text="Score: 0"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,6 +156,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,13 +165,15 @@
 
     <TextView
         android:id="@+id/timer"
-        android:layout_width="180dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
+        android:autoSizeMinTextSize="20dp"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scorecounter" />
 
