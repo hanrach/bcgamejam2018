@@ -158,4 +158,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scorecounter" />
 
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="Back"
+        android:onClick="goBack"/>
+
 </android.support.constraint.ConstraintLayout>

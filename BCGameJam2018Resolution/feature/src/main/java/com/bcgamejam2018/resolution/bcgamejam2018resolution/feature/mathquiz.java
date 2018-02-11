@@ -24,6 +24,7 @@ public class mathquiz extends AppCompatActivity {
     private int response4;
     private int response5;
     private int response6;
+    private Button backButton;
 
     public int getMathQuestionLevel(){
         return mathquestionlevel;
@@ -121,7 +122,7 @@ public class mathquiz extends AppCompatActivity {
         }
     }
 
-    public void generateResponses(){
+    public void generateResponses() {
         Button button1 = findViewById(R.id.mathresponse1);
         button1.setText(Integer.toString(this.response1));
         Button button2 = findViewById(R.id.mathresponse2);
@@ -156,6 +157,10 @@ public class mathquiz extends AppCompatActivity {
         }
 
         return timer;
+    }
+
+    public void goBack(View view){
+        this.finish();
     }
 
     @Override
