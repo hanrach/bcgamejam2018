@@ -1,6 +1,8 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -17,6 +19,11 @@ public class Util {
     public static void showToast(Context context, String msg) {
         Toast.makeText(context, msg,
                 Toast.LENGTH_LONG).show();
+    }
+
+    public static void pushActivity(Context context, Class activity) {
+        Intent intent = new Intent(context, activity);
+        context.startActivity(intent);
     }
 
     public static String loadJSONFromAsset(Context context, String filename) {
