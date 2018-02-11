@@ -24,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton healthButton;
     ImageButton relButton;
     TextView calendar;
+    Button goback;
     int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
     // STATS
@@ -54,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
             ending();
             return;
         }
-        monthsLeft.setText("There's "+ month+" months left!!");
+        monthsLeft.setText("There's "+ month+" months left in the year!!");
         int i = (month*(-1))+12;
         calendar.setText(monthList.get(i));
 
@@ -151,12 +152,20 @@ public class HomeActivity extends AppCompatActivity {
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
+        goback = findViewById(R.id.goback);
 //<<<<<<< HEAD
 //        View temp = findViewById(R.id.lin);
         i = findViewById(R.id.intelStat2);
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
+
+        goback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 //=======
 //        i = findViewById(R.id.intelStat);
 //        w = findViewById(R.id.wealthStat);
