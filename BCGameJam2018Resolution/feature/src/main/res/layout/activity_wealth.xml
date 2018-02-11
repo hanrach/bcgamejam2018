@@ -10,6 +10,16 @@
     app:layout_constraintTop_toTopOf="parent"
     tools:context="com.bcgamejam2018.resolution.bcgamejam2018resolution.feature.Wealth">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/cash"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="0dp"
@@ -34,10 +44,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Current Stock Price:  $"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/tryButton"
         app:layout_constraintEnd_toStartOf="@+id/stockPrice"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
 
     <TextView
         android:id="@+id/stockPrice"
@@ -48,12 +62,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="100"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tryButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintLeft_toLeftOf="@+id/text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
 
     <ImageButton
         android:id="@+id/home"
@@ -111,6 +128,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Level 1"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tryButton"
