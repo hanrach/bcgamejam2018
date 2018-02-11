@@ -104,6 +104,8 @@ public class HomeActivity extends AppCompatActivity {
     public void ending(){
         Toast.makeText(getApplicationContext(), "Game OVer",
                 Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), EndingActivity.class);
+        startActivityForResult(intent, 100);
     }
 
     // Calls this when miniGame ends
@@ -113,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if(resultCode==RESULT_CANCELED){
             updateMonth();
+
         }
 
     }

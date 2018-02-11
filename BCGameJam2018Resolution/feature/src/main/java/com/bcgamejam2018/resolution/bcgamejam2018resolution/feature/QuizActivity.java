@@ -77,7 +77,9 @@ public class QuizActivity extends AppCompatActivity {
         solutionButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
-                generateQuiz(quizzes, ++currentCorrectIndex);
+                generateQuiz(quizzes, ++currentQuizIndex);
+                solutionButton.setVisibility(View.INVISIBLE);
+
             }
         });
 
