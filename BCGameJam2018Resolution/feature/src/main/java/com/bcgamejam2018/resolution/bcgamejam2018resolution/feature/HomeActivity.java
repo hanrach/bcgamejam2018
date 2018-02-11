@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity {
     public void intelGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        Intent intent = new Intent(getApplicationContext(), mathquiz.class);
         startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }

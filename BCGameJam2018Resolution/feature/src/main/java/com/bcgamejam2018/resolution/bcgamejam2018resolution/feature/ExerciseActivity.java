@@ -25,6 +25,7 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
     SensorManager sensorManager;
     TextView stepstext;
     TextView goalstepstext;
+    TextView healthScore;
     int gameLevel = 1;
     int goalsteps = 50*gameLevel ;
     float steps = 0;
@@ -41,9 +42,10 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
         stepstext = (TextView) findViewById(R.id.stepstext);
         goalstepstext = (TextView) findViewById(R.id.goalstepstext);
         level = (TextView) findViewById(R.id.level);
+        healthScore = (TextView) findViewById(R.id.healthScore);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         goalstepstext.setText(String.valueOf(goalsteps));
-
+        healthScore.setText(String.valueOf(HomeActivity.health));
 
         homeButton = (ImageButton) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new OnClickListener() {
