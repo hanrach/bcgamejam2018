@@ -3,6 +3,7 @@ package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -142,6 +143,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+        mediaPlayer.start(); // no need to call prepare(); create() does that for you
 
         monthsLeft = findViewById(R.id.sentence);
         intelButton = findViewById(R.id.intelButton);
