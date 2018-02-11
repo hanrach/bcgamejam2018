@@ -30,19 +30,23 @@ public class QuizActivity extends AppCompatActivity {
     Button choice2Button;
     Button choice3Button;
     Button choice4Button;
+    Button solutionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+
         scoreTextView = findViewById(R.id.scoreTextView);
         titleTextView = findViewById(R.id.questionTextView);
+        solutionButton = findViewById(R.id.solutionButton);
         choice1Button = findViewById(R.id.choice1Button);
         choice1Button.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
                 chooseAnswer(0);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice2Button = findViewById(R.id.choice2Button);
@@ -50,6 +54,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(1);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice3Button = findViewById(R.id.choice3Button);
@@ -57,6 +62,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(2);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice4Button = findViewById(R.id.choice4Button);
@@ -64,6 +70,14 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(3);
+                solutionButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        solutionButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                generateQuiz(quizzes, ++currentCorrectIndex);
             }
         });
 
@@ -120,6 +134,8 @@ public class QuizActivity extends AppCompatActivity {
             choice2Button.setText(quiz.options[1]);
             choice3Button.setText(quiz.options[2]);
             choice4Button.setText(quiz.options[3]);
+            solutionButton.setText(quiz.solution);
+
         }
     }
 
@@ -132,7 +148,7 @@ public class QuizActivity extends AppCompatActivity {
             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
             mediaPlayer.start(); // no need to call prepare(); create() does that for you
         }
-        generateQuiz(this.quizzes, ++this.currentQuizIndex);
+       // generateQuiz(this.quizzes, ++this.currentQuizIndex);
     }
 
     private void setScore(int score) {
