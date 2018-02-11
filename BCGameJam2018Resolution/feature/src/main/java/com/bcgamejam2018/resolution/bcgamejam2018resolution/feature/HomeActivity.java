@@ -1,13 +1,11 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -83,21 +81,6 @@ public class HomeActivity extends AppCompatActivity {
         layoutParams.width = (int) (intelligence * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         this.i.setLayoutParams(layoutParams);
-//<<<<<<< HEAD
-//        w.setMaxWidth(wealth);
-//        this.i.setMaxWidth(intelligence);
-//        r.setMaxWidth(relationship);
-//        h.setMaxWidth(health);
-//        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
-//        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
-//        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
-//        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
-//=======
-//        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
-//        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
-//        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
-//        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
-//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 
     /////////////EDIT ENDING!!!!////////
@@ -127,7 +110,6 @@ public class HomeActivity extends AppCompatActivity {
 
         if(resultCode==RESULT_CANCELED){
             updateMonth();
-
         }
 
     }
@@ -161,33 +143,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
-        mediaPlayer.start(); // no need to call prepare(); create() does that for you
-
         monthsLeft = findViewById(R.id.sentence);
         intelButton = findViewById(R.id.intelButton);
         wealthButton = findViewById(R.id.wealthButton);
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
-//<<<<<<< HEAD
-//        View temp = findViewById(R.id.lin);
         i = findViewById(R.id.intelStat2);
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
 
 
-        if(mediaPlayer != null) {
-            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
-            mediaPlayer.start(); // no need to call prepare(); create() does that for you
-        }
-
-//=======
-//        i = findViewById(R.id.intelStat);
-//        w = findViewById(R.id.wealthStat);
-//        r = findViewById(R.id.relStat);
-//        h = findViewById(R.id.healthStat);
-//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 }
