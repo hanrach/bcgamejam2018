@@ -24,7 +24,6 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton healthButton;
     ImageButton relButton;
     TextView calendar;
-    Button goback;
     int month = 12;
     List<String> monthList = new ArrayList<>(Arrays.asList("Jan", "Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"));
     // STATS
@@ -49,13 +48,16 @@ public class HomeActivity extends AppCompatActivity {
     static void setWealthStat(int i){
         wealth += i;
     }
+    static int getWealth(){
+        return wealth;
+    }
 
     public void updateMonth(){
         if (month == 0) {
             ending();
             return;
         }
-        monthsLeft.setText("There's "+ month+" months left in the year!!");
+        monthsLeft.setText("There's "+ month+" months left!!");
         int i = (month*(-1))+12;
         calendar.setText(monthList.get(i));
 
@@ -107,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode==RESULT_CANCELED){
-            updateMonth();
+                updateMonth();
         }
 
     }
@@ -115,29 +117,32 @@ public class HomeActivity extends AppCompatActivity {
     public void intelGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), mathquiz.class);
-        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }
 
     public void wealthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), Wealth.class);
+        startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }
 
     public void relationshipGame(View view){
         month--;
-        Util.pushActivity(getApplicationContext(), RelationshipQuizActivity.class);
+        // REPLACE WITH CORRESPONDING CLASS LATER/////////////
+        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        startActivityForResult(intent, 100);
+        //////////////////////////////////////////////////////
     }
 
     public void healthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }
 
@@ -152,20 +157,12 @@ public class HomeActivity extends AppCompatActivity {
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
-        goback = findViewById(R.id.goback);
 //<<<<<<< HEAD
 //        View temp = findViewById(R.id.lin);
         i = findViewById(R.id.intelStat2);
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
-
-        goback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 //=======
 //        i = findViewById(R.id.intelStat);
 //        w = findViewById(R.id.wealthStat);
