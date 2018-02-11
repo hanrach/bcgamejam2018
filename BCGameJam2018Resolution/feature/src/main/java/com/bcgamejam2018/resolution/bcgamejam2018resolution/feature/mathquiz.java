@@ -97,8 +97,7 @@ public class mathquiz extends AppCompatActivity {
         }
 
         if (this.attempts > 5){
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
+            this.finish();
         }else{
             mathQuestionTextView.setText(generateMathQuestion());
             generateResponses();
@@ -113,8 +112,7 @@ public class mathquiz extends AppCompatActivity {
         confirmationTextView.setText("You ran out of time!");
         confirmationTextView.setTextColor(Color.RED);
         if (this.attempts > 5){
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
+            this.finish();
         }else{
             mathQuestionTextView.setText(generateMathQuestion());
             generateResponses();

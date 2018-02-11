@@ -1,6 +1,7 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -125,6 +126,11 @@ public class QuizActivity extends AppCompatActivity {
     private void chooseAnswer(int chosenIndex) {
         if(chosenIndex == currentCorrectIndex) {
             setScore(this.score + 5);
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.correct);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        } else {
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
         }
         generateQuiz(this.quizzes, ++this.currentQuizIndex);
     }

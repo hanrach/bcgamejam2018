@@ -3,6 +3,7 @@ package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     ImageView w;
     ImageView r;
     ImageView h;
+
+    MediaPlayer mediaPlayer;
 
     static void setIntStat(int i){
         intelligence += i;
@@ -143,6 +146,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+        mediaPlayer.start(); // no need to call prepare(); create() does that for you
+
         monthsLeft = findViewById(R.id.sentence);
         intelButton = findViewById(R.id.intelButton);
         wealthButton = findViewById(R.id.wealthButton);
@@ -155,6 +161,12 @@ public class HomeActivity extends AppCompatActivity {
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
+
+
+        if(mediaPlayer != null) {
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        }
 
 //=======
 //        i = findViewById(R.id.intelStat);

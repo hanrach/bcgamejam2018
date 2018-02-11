@@ -7,6 +7,17 @@ import android.view.View;
 
 public class RelationshipQuizActivity extends AppCompatActivity {
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode==RESULT_CANCELED){
+            this.finish();
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +47,7 @@ public class RelationshipQuizActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
         intent.putExtra("quiztype", "relationship");
         intent.putExtra("quiztopic", subTopic);
-        startActivity(intent);
+        startActivityForResult(intent, 100);
     }
 
     public void goBack(View view){
