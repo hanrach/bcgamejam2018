@@ -116,31 +116,26 @@ public class HomeActivity extends AppCompatActivity {
 
     public void intelGame(View view){
         month--;
-        // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), mathquiz.class);
-        startActivity(intent);
-        //////////////////////////////////////////////////////
+        startActivityForResult(intent, 100);
     }
 
     public void wealthGame(View view){
         month--;
-        // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), Wealth.class);
-        startActivity(intent);
-        //////////////////////////////////////////////////////
+        startActivityForResult(intent, 100);
     }
 
     public void relationshipGame(View view){
         month--;
-        Util.pushActivity(getApplicationContext(), RelationshipQuizActivity.class);
+        Intent intent = new Intent(getApplicationContext(), RelationshipQuizActivity.class);
+        startActivityForResult(intent, 100);
     }
 
     public void healthGame(View view){
         month--;
-        // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
-        startActivity(intent);
-        //////////////////////////////////////////////////////
+        startActivityForResult(intent, 100);
     }
 
     @Override

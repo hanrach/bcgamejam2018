@@ -109,6 +109,7 @@ public class QuizActivity extends AppCompatActivity {
         if(quizIndex >= quizzes.size()) {
             // No more quizes, go back to the main
             Util.showToast(getApplicationContext(), "Done!! you got " + this.score);
+            HomeActivity.setRelStat(score);
             this.finish();
         } else {
             Quiz quiz = quizzes.get(quizIndex);
@@ -123,7 +124,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private void chooseAnswer(int chosenIndex) {
         if(chosenIndex == currentCorrectIndex) {
-            setScore(this.score + 1);
+            setScore(this.score + 5);
         }
         generateQuiz(this.quizzes, ++this.currentQuizIndex);
     }
