@@ -109,6 +109,14 @@ public class HomeActivity extends AppCompatActivity {
         intent.putExtra("wealth", wealth);
         intent.putExtra("relationship", relationship);
         intent.putExtra("health", health);
+
+        // Before opening end screen reset the score.
+        intelligence = 5;
+        wealth = 5;
+        relationship = 5;
+        health = 5;
+        month = 12;
+
         startActivityForResult(intent, 100);
     }
 
