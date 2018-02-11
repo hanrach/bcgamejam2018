@@ -101,6 +101,10 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
+    public void goBack(View view){
+        this.finish();
+    }
+
     private void generateQuiz(List<Quiz> quizzes, int quizIndex) {
         if(quizIndex >= quizzes.size()) {
             // No more quizes, go back to the main

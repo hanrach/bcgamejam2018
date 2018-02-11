@@ -32,6 +32,9 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
     //
 
 
+    public void goBack(View view){
+        this.finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

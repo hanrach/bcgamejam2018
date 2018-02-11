@@ -84,7 +84,7 @@ public class HomeActivity extends AppCompatActivity {
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), mathquiz.class);
-        startActivityForResult(intent, 100);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
@@ -92,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivityForResult(intent, 100);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
@@ -100,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivityForResult(intent, 100);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
@@ -108,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
-        startActivityForResult(intent, 100);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 

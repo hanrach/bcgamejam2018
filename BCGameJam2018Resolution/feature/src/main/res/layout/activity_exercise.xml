@@ -13,9 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
         android:baselineAligned="true"
         android:text="Goal steps for today:"
         android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/backbutton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="goBack"/>/>
 
     <TextView
         android:id="@+id/goalstepstext"
