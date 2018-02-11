@@ -3,6 +3,7 @@ package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -25,6 +26,11 @@ public class Util {
         Intent intent = new Intent(context, activity);
         context.startActivity(intent);
     }
+
+//    public static void playMusic(Class classs, String rawId) {
+//        MediaPlayer mp  = MediaPlayer.create(classs,rawId);
+//        mp.start();
+//    }
 
     public static String loadJSONFromAsset(Context context, String filename) {
         String json = null;

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class Wealth extends AppCompatActivity {
+    static boolean beg=false;
     TextView currPrice;
     TextView score;
     SeekBar seekBar;
@@ -27,7 +28,13 @@ public class Wealth extends AppCompatActivity {
     TextView stage;
     static int lv=1;
     Button result;
+    Button instrc;
 
+
+
+    public void goaway(View v){
+        instrc.setVisibility(View.INVISIBLE);
+    }
     public void returnHome(View view){
         Intent returnIntent = new Intent();
         setResult(RESULT_CANCELED, returnIntent);
@@ -55,9 +62,12 @@ public class Wealth extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wealth);
-
+        instrc = findViewById(R.id.instruction);
         lv = 1+ HomeActivity.getWealth()/20;
-
+if(!beg) {
+    instrc.setVisibility(View.VISIBLE);
+    beg=true;
+}
         stage = findViewById(R.id.lv);
         stage.setText("Level " + lv);
         seekBar = findViewById(R.id.seekBar);
