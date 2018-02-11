@@ -115,25 +115,25 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void intelGame(View view){
-        month--;
+        month -= 3;
         Intent intent = new Intent(getApplicationContext(), mathquiz.class);
         startActivityForResult(intent, 100);
     }
 
     public void wealthGame(View view){
-        month--;
+        month -=3;
         Intent intent = new Intent(getApplicationContext(), Wealth.class);
         startActivityForResult(intent, 100);
     }
 
     public void relationshipGame(View view){
-        month--;
+        month -=4;
         Intent intent = new Intent(getApplicationContext(), RelationshipQuizActivity.class);
         startActivityForResult(intent, 100);
     }
 
     public void healthGame(View view){
-        month--;
+        month -=6;
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
         startActivityForResult(intent, 100);
     }
