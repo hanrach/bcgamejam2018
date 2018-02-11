@@ -8,9 +8,11 @@ public class Quiz {
     String information;
     String[] options;
     int correctIndex;
-    public Quiz(String information, String[] options, int correctIndex) {
+    String solution;
+    public Quiz(String information, String[] options, String solution, int correctIndex) {
         this.information = information;
         this.options = options;
+        this.solution = solution;
         this.correctIndex = correctIndex;
     }
 }
