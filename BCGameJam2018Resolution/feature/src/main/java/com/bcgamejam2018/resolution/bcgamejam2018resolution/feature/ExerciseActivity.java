@@ -32,6 +32,8 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
     boolean activityRunning = false;
     ImageButton homeButton;
 
+    private static boolean DEMO = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +51,15 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
             @Override
             public void onClick(View v) {
                 steps = 0;
+                if(DEMO) {
+                    HomeActivity.setHealthStat(50);
+                    steps = 50;
+                }
                 activityRunning = false;
                 finish();
             }
         });
+
     }
 
     @Override
