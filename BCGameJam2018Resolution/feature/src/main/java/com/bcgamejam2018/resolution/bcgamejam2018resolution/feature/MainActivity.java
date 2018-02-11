@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer mediaPlayer;
+
     public static int level = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton startImageBtn = findViewById(R.id.gameStartButton);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
-        mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        if(mediaPlayer != null) {
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        }
 
         startImageBtn.setOnClickListener(new ImageButton.OnClickListener(){
             @Override

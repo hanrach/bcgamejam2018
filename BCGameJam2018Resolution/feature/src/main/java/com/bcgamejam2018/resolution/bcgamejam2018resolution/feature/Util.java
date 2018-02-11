@@ -18,8 +18,7 @@ import java.io.InputStream;
 
 public class Util {
     public static void showToast(Context context, String msg) {
-        Toast.makeText(context, msg,
-                Toast.LENGTH_LONG).show();
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
     public static void pushActivity(Context context, Class activity) {

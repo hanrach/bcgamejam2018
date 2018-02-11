@@ -37,6 +37,8 @@ public class HomeActivity extends AppCompatActivity {
     ImageView r;
     ImageView h;
 
+    MediaPlayer mediaPlayer;
+
     static void setIntStat(int i){
         intelligence += i;
     }
@@ -159,6 +161,12 @@ public class HomeActivity extends AppCompatActivity {
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
+
+
+        if(mediaPlayer != null) {
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        }
 
 //=======
 //        i = findViewById(R.id.intelStat);
