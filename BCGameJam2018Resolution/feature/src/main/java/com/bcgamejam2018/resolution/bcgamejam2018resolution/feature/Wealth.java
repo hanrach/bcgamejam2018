@@ -79,14 +79,8 @@ if(!beg) {
         score = findViewById(R.id.numbersPicked);
         home = findViewById(R.id.home);
         seekBar.setEnabled(true);
-        seekBar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return true;
-            }
-        });
 
-        int temp = 600 - (lv*100);
+        int temp = Math.max(600 - (lv*100), 100);
         countDownTimer = new CountDownTimer(60000, temp) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -100,8 +94,6 @@ if(!beg) {
                 finish();
             }
         }.start();
-
-
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
