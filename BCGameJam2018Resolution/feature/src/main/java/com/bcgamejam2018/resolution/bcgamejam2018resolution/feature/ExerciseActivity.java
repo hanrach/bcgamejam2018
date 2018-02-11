@@ -44,8 +44,8 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
         level = (TextView) findViewById(R.id.level);
         healthScore = (TextView) findViewById(R.id.healthScore);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        goalstepstext.setText(String.valueOf(goalsteps));
-        healthScore.setText(String.valueOf(HomeActivity.health));
+        goalstepstext.setText("Level: " + String.valueOf(goalsteps));
+        healthScore.setText("Health Score: " + String.valueOf(HomeActivity.health));
 
         homeButton = (ImageButton) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new OnClickListener() {
