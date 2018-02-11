@@ -109,6 +109,7 @@ public class QuizActivity extends AppCompatActivity {
         if(quizIndex >= quizzes.size()) {
             // No more quizes, go back to the main
             Util.showToast(getApplicationContext(), "Done!! you got " + this.score);
+            this.finish();
         } else {
             Quiz quiz = quizzes.get(quizIndex);
             titleTextView.setText(quiz.information);
