@@ -49,11 +49,11 @@ public class Wealth extends AppCompatActivity {
     }
     public void onClickTryButton(View view){
         actualScore = actualScore + seekBar.getProgress();
-        score.setText("Current money earned: " + actualScore + "Millions");
+        score.setText("Current money earned: " + actualScore + " Millions");
         tries--;
         if (tries == 0) {
             result.setVisibility(View.VISIBLE);
-            result.setText("YOU EARNED $ " + actualScore + "Millions !");
+            result.setText("YOU EARNED $ " + actualScore + " Millions !");
             HomeActivity.setWealthStat(actualScore/13);
         }
     }
@@ -106,7 +106,7 @@ if(!beg) {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                currPrice.setText(i+" Millions");
+                currPrice.setText(i + " Millions");
             }
 
             @Override
