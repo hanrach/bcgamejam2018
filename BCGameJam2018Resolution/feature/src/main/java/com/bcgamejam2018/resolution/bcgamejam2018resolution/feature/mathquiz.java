@@ -88,6 +88,7 @@ public class mathquiz extends AppCompatActivity {
             confirmationTextView.setText("You are correct!");
             confirmationTextView.setTextColor(Color.GREEN);
             this.score = this.score = this.score + timeLeft;
+            HomeActivity.setIntStat(5);
             TextView scoreView = findViewById(R.id.scorecounter);
             scoreView.setText("Score: " + Integer.toString(this.score));
         }else{
