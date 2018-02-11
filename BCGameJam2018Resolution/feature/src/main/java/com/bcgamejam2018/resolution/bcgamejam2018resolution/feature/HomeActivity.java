@@ -131,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
     public void relationshipGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
         startActivity(intent);
         //////////////////////////////////////////////////////
     }
