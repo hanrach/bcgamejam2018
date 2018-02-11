@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode==RESULT_CANCELED){
-                updateMonth();
+            updateMonth();
         }
 
     }
@@ -117,32 +117,29 @@ public class HomeActivity extends AppCompatActivity {
     public void intelGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivityForResult(intent, 100);
+        Intent intent = new Intent(getApplicationContext(), mathquiz.class);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
     public void wealthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), Wealth.class);
-        startActivityForResult(intent, 100);
+        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
     public void relationshipGame(View view){
         month--;
-        // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivityForResult(intent, 100);
-        //////////////////////////////////////////////////////
+        Util.pushActivity(getApplicationContext(), RelationshipQuizActivity.class);
     }
 
     public void healthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
-        startActivityForResult(intent, 100);
+        startActivity(intent);
         //////////////////////////////////////////////////////
     }
 
@@ -163,6 +160,7 @@ public class HomeActivity extends AppCompatActivity {
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
+
 //=======
 //        i = findViewById(R.id.intelStat);
 //        w = findViewById(R.id.wealthStat);
