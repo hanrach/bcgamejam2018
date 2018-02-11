@@ -48,6 +48,9 @@ public class HomeActivity extends AppCompatActivity {
     static void setWealthStat(int i){
         wealth += i;
     }
+    static int getWealth(){
+        return wealth;
+    }
 
     public void updateMonth(){
         if (month == 0) {
@@ -122,7 +125,7 @@ public class HomeActivity extends AppCompatActivity {
     public void wealthGame(View view){
         month--;
         // REPLACE WITH CORRESPONDING CLASS LATER/////////////
-        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+        Intent intent = new Intent(getApplicationContext(), Wealth.class);
         startActivityForResult(intent, 100);
         //////////////////////////////////////////////////////
     }
