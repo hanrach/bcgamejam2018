@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void updateMonth(){
-        if (month == 0) {
+        if (month <= 0) {
             ending();
             return;
         }
