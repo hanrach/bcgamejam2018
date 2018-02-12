@@ -80,27 +80,13 @@ public class HomeActivity extends AppCompatActivity {
         layoutParams.width = (int) (intelligence * Resources.getSystem().getDisplayMetrics().density);
         layoutParams.height = (int) (10 * Resources.getSystem().getDisplayMetrics().density);
         this.i.setLayoutParams(layoutParams);
-//<<<<<<< HEAD
-//        w.setMaxWidth(wealth);
-//        this.i.setMaxWidth(intelligence);
-//        r.setMaxWidth(relationship);
-//        h.setMaxWidth(health);
-//        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
-//        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
-//        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
-//        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
-//=======
-//        this.i.setLayoutParams(new ActionBar.LayoutParams(intelligence, 10));
-//        this.w.setLayoutParams(new ActionBar.LayoutParams(wealth, 10));
-//        this.r.setLayoutParams(new ActionBar.LayoutParams(relationship, 10));
-//        this.h.setLayoutParams(new ActionBar.LayoutParams(health, 10));
-//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 
     /////////////EDIT ENDING!!!!////////
     public void ending(){
-        Toast.makeText(getApplicationContext(), "Game OVer",
-                Toast.LENGTH_LONG).show();
+        if (intelligence<75 || wealth <75 || relationship < 75 || health<75){
+
+        }
     }
 
     // Calls this when miniGame ends
@@ -149,18 +135,10 @@ public class HomeActivity extends AppCompatActivity {
         healthButton = findViewById(R.id.healthButton);
         relButton = findViewById(R.id.relButton);
         calendar = findViewById(R.id.month);
-//<<<<<<< HEAD
-//        View temp = findViewById(R.id.lin);
         i = findViewById(R.id.intelStat2);
         w = findViewById(R.id.wealthStat2);
         r = findViewById(R.id.relStat2);
         h = findViewById(R.id.healthStat2);
 
-//=======
-//        i = findViewById(R.id.intelStat);
-//        w = findViewById(R.id.wealthStat);
-//        r = findViewById(R.id.relStat);
-//        h = findViewById(R.id.healthStat);
-//>>>>>>> cff0a36689b8d2cba2f23a546e70da6adce5914c
     }
 }
