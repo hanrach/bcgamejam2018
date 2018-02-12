@@ -34,6 +34,12 @@ public class ExerciseActivity extends AppCompatActivity implements SensorEventLi
 
     private static boolean DEMO = true;
 
+    public void returnHome(View view){
+        Intent returnIntent = new Intent();
+        setResult(RESULT_CANCELED, returnIntent);
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
