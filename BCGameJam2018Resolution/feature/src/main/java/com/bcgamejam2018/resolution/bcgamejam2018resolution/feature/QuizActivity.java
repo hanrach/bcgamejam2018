@@ -1,6 +1,8 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,18 +32,25 @@ public class QuizActivity extends AppCompatActivity {
     Button choice3Button;
     Button choice4Button;
 
+    Button[] choiceButtons = new Button[4];
+
+    Button solutionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+
         scoreTextView = findViewById(R.id.scoreTextView);
         titleTextView = findViewById(R.id.questionTextView);
+        solutionButton = findViewById(R.id.solutionButton);
         choice1Button = findViewById(R.id.choice1Button);
         choice1Button.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
                 chooseAnswer(0);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice2Button = findViewById(R.id.choice2Button);
@@ -49,6 +58,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(1);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice3Button = findViewById(R.id.choice3Button);
@@ -56,6 +66,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(2);
+                solutionButton.setVisibility(View.VISIBLE);
             }
         });
         choice4Button = findViewById(R.id.choice4Button);
@@ -63,6 +74,21 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 chooseAnswer(3);
+                solutionButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        choiceButtons[0] = choice1Button;
+        choiceButtons[1] = choice2Button;
+        choiceButtons[2] = choice3Button;
+        choiceButtons[3] = choice4Button;
+
+        solutionButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                generateQuiz(quizzes, ++currentQuizIndex);
+                solutionButton.setVisibility(View.INVISIBLE);
+
             }
         });
 
@@ -106,6 +132,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void generateQuiz(List<Quiz> quizzes, int quizIndex) {
+        for(Button b: choiceButtons) {
+            b.setBackgroundColor(Color.LTGRAY);
+        }
         if(quizIndex >= quizzes.size()) {
             // No more quizes, go back to the main
             Util.showToast(getApplicationContext(), "Done!! you got " + this.score);
@@ -119,14 +148,26 @@ public class QuizActivity extends AppCompatActivity {
             choice2Button.setText(quiz.options[1]);
             choice3Button.setText(quiz.options[2]);
             choice4Button.setText(quiz.options[3]);
+            solutionButton.setText(quiz.solution);
+
         }
     }
 
     private void chooseAnswer(int chosenIndex) {
+
+        choiceButtons[chosenIndex].setBackgroundColor(Color.rgb(255, 80, 80));
+        choiceButtons[currentCorrectIndex].setBackgroundColor(Color.rgb(102, 255, 102));
+
+
         if(chosenIndex == currentCorrectIndex) {
             setScore(this.score + 5);
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.correct);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        } else {
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+            mediaPlayer.start(); // no need to call prepare(); create() does that for you
         }
-        generateQuiz(this.quizzes, ++this.currentQuizIndex);
+       // generateQuiz(this.quizzes, ++this.currentQuizIndex);
     }
 
     private void setScore(int score) {

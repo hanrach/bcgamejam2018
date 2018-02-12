@@ -1,12 +1,11 @@
 package com.bcgamejam2018.resolution.bcgamejam2018resolution.feature;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +34,8 @@ public class HomeActivity extends AppCompatActivity {
     ImageView w;
     ImageView r;
     ImageView h;
+
+    MediaPlayer mediaPlayer;
 
     static void setIntStat(int i){
         intelligence += i;
@@ -84,9 +85,22 @@ public class HomeActivity extends AppCompatActivity {
 
     /////////////EDIT ENDING!!!!////////
     public void ending(){
-        if (intelligence<75 || wealth <75 || relationship < 75 || health<75){
+        Toast.makeText(getApplicationContext(), "Game Over",
+                Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), EndingActivity.class);
+        intent.putExtra("intelligence", intelligence);
+        intent.putExtra("wealth", wealth);
+        intent.putExtra("relationship", relationship);
+        intent.putExtra("health", health);
 
-        }
+        // Before opening end screen reset the score.
+        intelligence = 5;
+        wealth = 5;
+        relationship = 5;
+        health = 5;
+        month = 12;
+
+        startActivityForResult(intent, 100);
     }
 
     // Calls this when miniGame ends
@@ -101,25 +115,25 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void intelGame(View view){
-        month--;
+        month -= 3;
         Intent intent = new Intent(getApplicationContext(), mathquiz.class);
         startActivityForResult(intent, 100);
     }
 
     public void wealthGame(View view){
-        month--;
+        month -=3;
         Intent intent = new Intent(getApplicationContext(), Wealth.class);
         startActivityForResult(intent, 100);
     }
 
     public void relationshipGame(View view){
-        month--;
+        month -=4;
         Intent intent = new Intent(getApplicationContext(), RelationshipQuizActivity.class);
         startActivityForResult(intent, 100);
     }
 
     public void healthGame(View view){
-        month--;
+        month -=6;
         Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
         startActivityForResult(intent, 100);
     }

@@ -25,6 +25,8 @@ public class mathquiz extends AppCompatActivity {
     private int response5;
     private int response6;
     private Button backButton;
+    private int correctResponse;
+    Button[] responseButtons = new Button[6];
 
     public int getMathQuestionLevel(){
         return mathquestionlevel;
@@ -35,9 +37,14 @@ public class mathquiz extends AppCompatActivity {
     }
 
     public String generateMathQuestion(){
+
+        for(Button b : responseButtons) {
+            b.setBackgroundColor(Color.LTGRAY);
+        }
+
         String mathQuestion = "Something went wrong...";
         Random rand = new Random();
-        int correctResponse = rand.nextInt(5) + 1;
+        correctResponse = rand.nextInt(5) + 1;
         switch (this.mathquestionlevel){
             case 1 :
                 //Note! It's possible for the answer to appear twice through randomness
@@ -80,10 +87,14 @@ public class mathquiz extends AppCompatActivity {
 
     public void chooseAnswer(View v){
         this.attempts++;
-        TextView mathQuestionTextView = findViewById(R.id.mathquestion);
+        final TextView mathQuestionTextView = findViewById(R.id.mathquestion);
         TextView confirmationTextView = findViewById(R.id.confirmation);
         Button b = (Button)v;
         int response = Integer.parseInt(b.getText().toString());
+
+        b.setBackgroundColor(Color.rgb(255, 80, 80));
+        responseButtons[correctResponse - 1].setBackgroundColor(Color.rgb(102, 255, 102));
+
         if (response == answer){
             confirmationTextView.setText("You are correct!");
             confirmationTextView.setTextColor(Color.GREEN);
@@ -97,12 +108,18 @@ public class mathquiz extends AppCompatActivity {
         }
 
         if (this.attempts > 5){
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
+            this.finish();
         }else{
-            mathQuestionTextView.setText(generateMathQuestion());
-            generateResponses();
-            this.timer = startTimer(this.timer);
+             new CountDownTimer(1000, 1000) {
+                public void onTick(long millisUntilFinished) {
+
+                }
+                public void onFinish() {
+                    mathQuestionTextView.setText(generateMathQuestion());
+                    generateResponses();
+                    timer = startTimer(timer);
+                }
+            }.start();
         }
     }
 
@@ -113,8 +130,7 @@ public class mathquiz extends AppCompatActivity {
         confirmationTextView.setText("You ran out of time!");
         confirmationTextView.setTextColor(Color.RED);
         if (this.attempts > 5){
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
+            this.finish();
         }else{
             mathQuestionTextView.setText(generateMathQuestion());
             generateResponses();
@@ -124,18 +140,12 @@ public class mathquiz extends AppCompatActivity {
     }
 
     public void generateResponses() {
-        Button button1 = findViewById(R.id.mathresponse1);
-        button1.setText(Integer.toString(this.response1));
-        Button button2 = findViewById(R.id.mathresponse2);
-        button2.setText(Integer.toString(this.response2));
-        Button button3 = findViewById(R.id.mathresponse3);
-        button3.setText(Integer.toString(this.response3));
-        Button button4 = findViewById(R.id.mathresponse4);
-        button4.setText(Integer.toString(this.response4));
-        Button button5 = findViewById(R.id.mathresponse5);
-        button5.setText(Integer.toString(this.response5));
-        Button button6 = findViewById(R.id.mathresponse6);
-        button6.setText(Integer.toString(this.response6));
+        responseButtons[0].setText(Integer.toString(this.response1));
+        responseButtons[1].setText(Integer.toString(this.response2));
+        responseButtons[2].setText(Integer.toString(this.response3));
+        responseButtons[3].setText(Integer.toString(this.response4));
+        responseButtons[4].setText(Integer.toString(this.response5));
+        responseButtons[5].setText(Integer.toString(this.response6));
     }
 
     public CountDownTimer startTimer(CountDownTimer timer){
@@ -168,9 +178,18 @@ public class mathquiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mathquiz);
+        responseButtons[0] = findViewById(R.id.mathresponse1);
+        responseButtons[1] = findViewById(R.id.mathresponse2);
+        responseButtons[2] = findViewById(R.id.mathresponse3);
+        responseButtons[3] = findViewById(R.id.mathresponse4);
+        responseButtons[4] = findViewById(R.id.mathresponse5);
+        responseButtons[5] = findViewById(R.id.mathresponse6);
         TextView mathQuestionTextView = findViewById(R.id.mathquestion);
         mathQuestionTextView.setText(generateMathQuestion());
+
         generateResponses();
         this.timer = startTimer(this.timer);
+
+
     }
 }
