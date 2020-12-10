@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayer;
+    private boolean hasPlayed = false;
 
     public static int level = 1;
     @Override
@@ -19,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton startImageBtn = findViewById(R.id.gameStartButton);
-
-        if(mediaPlayer != null) {
-            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bgmusic);
-            mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        if(!hasPlayed) {
+            Intent svc = new Intent(this, BackgroundSoundService.class);
+            startService(svc);
+            hasPlayed = true;
         }
+
+        ImageButton startImageBtn = findViewById(R.id.gameStartButton);
 
         startImageBtn.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
